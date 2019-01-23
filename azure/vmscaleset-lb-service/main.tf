@@ -32,7 +32,7 @@ module "computegroup" {
   source                                 = "Azure/computegroup/azurerm"
   resource_group_name                    = "${var.resource_group_name}"
   location                               = "${var.az_region}"
-  vm_size                                = "Standard_B1s"
+  vm_size                                = "${var.instance_type}"
   admin_username                         = "azureuser"
   admin_password                         = "ComplexPassword"
   ssh_key                                = "~/.ssh/id_rsa.pub"
