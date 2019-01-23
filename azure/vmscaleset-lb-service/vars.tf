@@ -1,4 +1,5 @@
 variable "az_region" {
+  default = "eastus"
   description = "The Azure region to deploy to"
 }
 
