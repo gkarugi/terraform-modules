@@ -9,7 +9,6 @@ terraform {
 
 module "VirtualNetwork" {
   source              = "Azure/network/azurerm"
-  version                                = "2.1.0"
   location            = "${var.az_region}"
   resource_group_name = "${var.resource_group_name}"
   vnet_name           = "${var.name}-VNet"
@@ -28,7 +27,6 @@ resource "azurerm_subnet" "subnet" {
 
 module "NetworkSecurityGroup" {
     source = "Azure/network-security-group/azurerm"
-    version                                = "2.1.0"
     resource_group_name        = "${var.resource_group_name}"
     location                   = "${var.az_region}"
     security_group_name        = "${var.name}-NSG"
@@ -50,7 +48,6 @@ module "NetworkSecurityGroup" {
 # Azure Load balancer
 module "loadbalancer" {
   source              = "Azure/loadbalancer/azurerm"
-  version                                = "2.1.0"
   type = "public"
   resource_group_name = "${var.resource_group_name}"
   location            = "${var.az_region}"
