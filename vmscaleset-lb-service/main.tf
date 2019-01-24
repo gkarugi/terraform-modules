@@ -1,5 +1,4 @@
 provider "azurerm" {
-  region  = "${var.az_region}"
   version = "~> 1.0"
 }
 
