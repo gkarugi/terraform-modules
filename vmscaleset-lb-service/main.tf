@@ -53,7 +53,7 @@ module "loadbalancer" {
   location            = "${var.az_region}"
   prefix              = "${var.name}"
   frontend_name       =   "${var.name}-frontend"
-  allocation_method   =   "static"
+  public_ip_address_allocation   =   "static"
 
   lb_port = {
     http  = ["80", "Tcp", "80"]
